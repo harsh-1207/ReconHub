@@ -1,5 +1,19 @@
-const mysql=require('mysql2/promise');
-require('dotenv').config();
-const pool=mysql.createPool({host:process.env.DB_HOST||'localhost',port:Number(process.env.DB_PORT||3306),user:process.env.DB_USER||'root',password:process.env.DB_PASSWORD||'',database:process.env.DB_NAME||'invoice_reconciliation',waitForConnections:true,connectionLimit:10,queueLimit:0});
-async function testConnection(){const c=await pool.getConnection(); await c.ping(); c.release(); return true;}
-module.exports={pool,testConnection};
+const mysql = require("mysql2/promise");
+require("dotenv").config();
+const pool = mysql.createPool({
+  host: process.env.DB_HOST || "localhost",
+  port: Number(process.env.DB_PORT || 3306),
+  user: process.env.DB_USER || "root",
+  password: process.env.DB_PASSWORD || "",
+  database: process.env.DB_NAME || "invoice_reconciliation",
+  waitForConnections: true,
+  connectionLimit: 10,
+  queueLimit: 0,
+});
+async function testConnection() {
+  const c = await pool.getConnection();
+  await c.ping();
+  c.release();
+  return true;
+}
+module.exports = { pool, testConnection };

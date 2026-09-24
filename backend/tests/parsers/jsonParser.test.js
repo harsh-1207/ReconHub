@@ -1,1 +1,6 @@
-const JsonParser=require('../../src/document/parsers/JsonParser'); test('parses object and array',()=>{const p=new JsonParser();expect(p.parse(Buffer.from('{"a":1}'))).toEqual([{a:1}]);expect(p.parse(Buffer.from('[{"a":1},{"a":2}]'))).toHaveLength(2)});
+const JsonParser = require("../../src/document/parsers/JsonParser");
+test("parses object and array", () => {
+  const p = new JsonParser();
+  expect(p.parse(Buffer.from('{"a":1}'))).toEqual([{ a: 1 }]);
+  expect(p.parse(Buffer.from('[{"a":1},{"a":2}]'))).toHaveLength(2);
+});

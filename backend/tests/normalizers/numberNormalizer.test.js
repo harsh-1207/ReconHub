@@ -1,1 +1,7 @@
-const {normalizeNumber}=require('../../src/document/normalizers/numberNormalizer');test('normalizes currency numbers',()=>{expect(normalizeNumber('$1,234.50')).toBe(1234.5);expect(normalizeNumber('')).toBeNull()});
+const {
+  normalizeNumber,
+} = require("../../src/document/normalizers/numberNormalizer");
+test("normalizes currency numbers", () => {
+  expect(normalizeNumber("$1,234.50")).toBe(1234.5);
+  expect(normalizeNumber("")).toBeNull();
+});

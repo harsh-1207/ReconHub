@@ -1,1 +1,1 @@
-module.exports=require('./InvoiceNormalizer');
+module.exports = require("./InvoiceNormalizer");

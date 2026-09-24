@@ -1,11 +1,11 @@
 function text(value) {
   return value == null
-    ? ''
+    ? ""
     : String(value)
-      .trim()
-      .toLowerCase()
-      .replace(/[^\p{L}\p{N}\s]/gu, '')
-      .replace(/\s+/g, ' ');
+        .trim()
+        .toLowerCase()
+        .replace(/[^\p{L}\p{N}\s]/gu, "")
+        .replace(/\s+/g, " ");
 }
 
 function num(value) {

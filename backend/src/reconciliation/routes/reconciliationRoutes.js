@@ -1,1 +1,9 @@
-const express=require('express'); const c=require('../controllers/reconciliationController'); const asyncHandler=require('../../utils/asyncHandler'); const r=express.Router(); r.post('/',asyncHandler(c.create)); r.get('/',asyncHandler(c.list)); r.get('/:id',asyncHandler(c.get)); r.get('/:id/exceptions',asyncHandler(c.exceptions)); module.exports=r;
+const express = require("express");
+const c = require("../controllers/reconciliationController");
+const asyncHandler = require("../../utils/asyncHandler");
+const r = express.Router();
+r.post("/", asyncHandler(c.create));
+r.get("/", asyncHandler(c.list));
+r.get("/:id", asyncHandler(c.get));
+r.get("/:id/exceptions", asyncHandler(c.exceptions));
+module.exports = r;

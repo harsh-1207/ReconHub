@@ -1,1 +1,1 @@
-module.exports=require('./lineItemMatcher');
+module.exports = require("./lineItemMatcher");

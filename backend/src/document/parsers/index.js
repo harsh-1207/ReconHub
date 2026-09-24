@@ -1,1 +1,1 @@
-module.exports=require('./ParserRegistry');
+module.exports = require("./ParserRegistry");

@@ -1,4 +1,10 @@
-export default function Card({ title, subtitle, actions, children, className = '' }) {
+export default function Card({
+  title,
+  subtitle,
+  actions,
+  children,
+  className = "",
+}) {
   return (
     <section className={`card ${className}`.trim()}>
       {(title || actions) && (

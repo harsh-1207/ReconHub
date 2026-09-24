@@ -1,12 +1,12 @@
-import { Route, Routes } from 'react-router-dom';
-import AppLayout from './components/layout/AppLayout';
-import DashboardPage from './pages/DashboardPage';
-import DocumentsPage from './pages/DocumentsPage';
-import DocumentDetailsPage from './pages/DocumentDetailsPage';
-import ReconcilePage from './pages/ReconcilePage';
-import ReconciliationDetailsPage from './pages/ReconciliationDetailsPage';
-import ReportsPage from './pages/ReportsPage';
-import NotFoundPage from './pages/NotFoundPage';
+import { Route, Routes } from "react-router-dom";
+import AppLayout from "./components/layout/AppLayout";
+import DashboardPage from "./pages/DashboardPage";
+import DocumentsPage from "./pages/DocumentsPage";
+import DocumentDetailsPage from "./pages/DocumentDetailsPage";
+import ReconcilePage from "./pages/ReconcilePage";
+import ReconciliationDetailsPage from "./pages/ReconciliationDetailsPage";
+import ReportsPage from "./pages/ReportsPage";
+import NotFoundPage from "./pages/NotFoundPage";
 
 export default function App() {
   return (
@@ -16,7 +16,10 @@ export default function App() {
         <Route path="/documents" element={<DocumentsPage />} />
         <Route path="/documents/:id" element={<DocumentDetailsPage />} />
         <Route path="/reconcile" element={<ReconcilePage />} />
-        <Route path="/reconciliations/:id" element={<ReconciliationDetailsPage />} />
+        <Route
+          path="/reconciliations/:id"
+          element={<ReconciliationDetailsPage />}
+        />
         <Route path="/reports" element={<ReportsPage />} />
         <Route path="*" element={<NotFoundPage />} />
       </Route>

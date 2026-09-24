@@ -1,1 +1,24 @@
-const {matchLineItems}=require('../../src/reconciliation/matching');const item=(d,q=1,p=10)=>({description:d,quantity:q,unitPrice:p,tax:0,amount:q*p});test('matches regardless of order',()=>{const r=matchLineItems([item('A'),item('B')],[item('B'),item('A')]);expect(r.every(x=>x.status==='MATCHED')).toBe(true)});test('detects missing and extra',()=>{expect(matchLineItems([item('A')],[item('B')])[0].status).toBe('MISSING');expect(matchLineItems([item('A')],[item('A'),item('B')]).some(x=>x.status==='EXTRA')).toBe(true)});test('detects modification',()=>{const r=matchLineItems([item('A',2,10)],[item('A',1,10)]);expect(r[0].status).toBe('MODIFIED')});
+const { matchLineItems } = require("../../src/reconciliation/matching");
+const item = (d, q = 1, p = 10) => ({
+  description: d,
+  quantity: q,
+  unitPrice: p,
+  tax: 0,
+  amount: q * p,
+});
+test("matches regardless of order", () => {
+  const r = matchLineItems([item("A"), item("B")], [item("B"), item("A")]);
+  expect(r.every((x) => x.status === "MATCHED")).toBe(true);
+});
+test("detects missing and extra", () => {
+  expect(matchLineItems([item("A")], [item("B")])[0].status).toBe("MISSING");
+  expect(
+    matchLineItems([item("A")], [item("A"), item("B")]).some(
+      (x) => x.status === "EXTRA",
+    ),
+  ).toBe(true);
+});
+test("detects modification", () => {
+  const r = matchLineItems([item("A", 2, 10)], [item("A", 1, 10)]);
+  expect(r[0].status).toBe("MODIFIED");
+});

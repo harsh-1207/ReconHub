@@ -1,18 +1,18 @@
-import { useRef, useState } from 'react';
+import { useRef, useState } from "react";
 
-const allowed = ['csv', 'xls', 'xlsx', 'json'];
+const allowed = ["csv", "xls", "xlsx", "json"];
 
 export default function FileUploadPanel({ onUpload, busy }) {
   const [file, setFile] = useState(null);
-  const [localError, setLocalError] = useState('');
+  const [localError, setLocalError] = useState("");
   const inputRef = useRef(null);
 
   function select(nextFile) {
-    setLocalError('');
+    setLocalError("");
     if (!nextFile) return;
-    const extension = nextFile.name.split('.').pop()?.toLowerCase();
+    const extension = nextFile.name.split(".").pop()?.toLowerCase();
     if (!allowed.includes(extension)) {
-      setLocalError('Choose a CSV, XLS, XLSX, or JSON file.');
+      setLocalError("Choose a CSV, XLS, XLSX, or JSON file.");
       setFile(null);
       return;
     }
@@ -25,7 +25,7 @@ export default function FileUploadPanel({ onUpload, busy }) {
     const uploaded = await onUpload(file);
     if (uploaded) {
       setFile(null);
-      if (inputRef.current) inputRef.current.value = '';
+      if (inputRef.current) inputRef.current.value = "";
     }
   }
 
@@ -35,7 +35,10 @@ export default function FileUploadPanel({ onUpload, busy }) {
         <div className="upload-icon">↑</div>
         <div>
           <h3>Upload invoice document</h3>
-          <p>Accepted formats: CSV, XLS, XLSX, JSON. Maximum size is configured by the backend.</p>
+          <p>
+            Accepted formats: CSV, XLS, XLSX, JSON. Maximum size is configured
+            by the backend.
+          </p>
         </div>
       </div>
       <div className="upload-controls">
@@ -45,11 +48,19 @@ export default function FileUploadPanel({ onUpload, busy }) {
           accept=".csv,.xls,.xlsx,.json"
           onChange={(event) => select(event.target.files?.[0])}
         />
-        <button className="button button-primary" type="submit" disabled={!file || busy}>
-          {busy ? 'Uploading…' : 'Upload & normalize'}
+        <button
+          className="button button-primary"
+          type="submit"
+          disabled={!file || busy}
+        >
+          {busy ? "Uploading…" : "Upload & normalize"}
         </button>
       </div>
-      {file && <p className="selected-file">Selected: <strong>{file.name}</strong></p>}
+      {file && (
+        <p className="selected-file">
+          Selected: <strong>{file.name}</strong>
+        </p>
+      )}
       {localError && <p className="field-error">{localError}</p>}
     </form>
   );

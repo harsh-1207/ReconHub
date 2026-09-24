@@ -1,4 +1,4 @@
-export default function StatCard({ label, value, hint, tone = 'default' }) {
+export default function StatCard({ label, value, hint, tone = "default" }) {
   return (
     <article className={`stat-card stat-${tone}`}>
       <span className="stat-label">{label}</span>

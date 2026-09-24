@@ -1,3 +1,18 @@
-const express=require('express'); const multer=require('multer'); const c=require('../controllers/documentController'); const asyncHandler=require('../../utils/asyncHandler');
-const max=Number(process.env.MAX_FILE_SIZE_MB||20)*1024*1024; const upload=multer({storage:multer.memoryStorage(),limits:{fileSize:max}}); const r=express.Router();
-r.post('/',upload.single('file'),asyncHandler(c.upload)); r.get('/',asyncHandler(c.list)); r.get('/:id',asyncHandler(c.get)); r.get('/:id/items',asyncHandler(c.items)); r.post('/:id/parse',asyncHandler(c.parse)); r.get('/:id/canonical',asyncHandler(c.canonical)); r.delete('/:id',asyncHandler(c.remove)); module.exports=r;
+const express = require("express");
+const multer = require("multer");
+const c = require("../controllers/documentController");
+const asyncHandler = require("../../utils/asyncHandler");
+const max = Number(process.env.MAX_FILE_SIZE_MB || 20) * 1024 * 1024;
+const upload = multer({
+  storage: multer.memoryStorage(),
+  limits: { fileSize: max },
+});
+const r = express.Router();
+r.post("/", upload.single("file"), asyncHandler(c.upload));
+r.get("/", asyncHandler(c.list));
+r.get("/:id", asyncHandler(c.get));
+r.get("/:id/items", asyncHandler(c.items));
+r.post("/:id/parse", asyncHandler(c.parse));
+r.get("/:id/canonical", asyncHandler(c.canonical));
+r.delete("/:id", asyncHandler(c.remove));
+module.exports = r;

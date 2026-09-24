@@ -1,1 +1,37 @@
-module.exports={invoiceNumber:['invoice number','invoice_number','invoice no','invoice_no','invoiceno','invoice id','invoice_id'],vendor:['vendor','vendor name','supplier','supplier name','seller'],date:['date','invoice date','invoice_date','invoiceDate'],currency:['currency','currency code','currency_code'],subtotal:['subtotal','sub total','sub_total','net amount','net_amount'],tax:['tax','tax amount','tax_amount','gst','vat'],total:['total','grand total','grand_total','invoice total','amount due'],itemCode:['item code','item_code','sku','product code','product_code','code'],description:['description','item description','item_description','product','product name','name'],quantity:['quantity','qty'],unitPrice:['unit price','unit_price','price','unitprice'],amount:['amount','line amount','line_amount','total amount'],itemTax:['item tax','item_tax','line tax','line_tax']};
+module.exports = {
+  invoiceNumber: [
+    "invoice number",
+    "invoice_number",
+    "invoice no",
+    "invoice_no",
+    "invoiceno",
+    "invoice id",
+    "invoice_id",
+  ],
+  vendor: ["vendor", "vendor name", "supplier", "supplier name", "seller"],
+  date: ["date", "invoice date", "invoice_date", "invoiceDate"],
+  currency: ["currency", "currency code", "currency_code"],
+  subtotal: ["subtotal", "sub total", "sub_total", "net amount", "net_amount"],
+  tax: ["tax", "tax amount", "tax_amount", "gst", "vat"],
+  total: ["total", "grand total", "grand_total", "invoice total", "amount due"],
+  itemCode: [
+    "item code",
+    "item_code",
+    "sku",
+    "product code",
+    "product_code",
+    "code",
+  ],
+  description: [
+    "description",
+    "item description",
+    "item_description",
+    "product",
+    "product name",
+    "name",
+  ],
+  quantity: ["quantity", "qty"],
+  unitPrice: ["unit price", "unit_price", "price", "unitprice"],
+  amount: ["amount", "line amount", "line_amount", "total amount"],
+  itemTax: ["item tax", "item_tax", "line tax", "line_tax"],
+};

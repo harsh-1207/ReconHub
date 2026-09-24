@@ -1,12 +1,12 @@
-const BaseParser = require('./BaseParser');
+const BaseParser = require("./BaseParser");
 
 class JsonParser extends BaseParser {
   supports(fileType) {
-    return fileType === 'json';
+    return fileType === "json";
   }
 
   parse(buffer) {
-    const data = JSON.parse(buffer.toString('utf8'));
+    const data = JSON.parse(buffer.toString("utf8"));
     if (Array.isArray(data)) return data;
 
     if (data && Array.isArray(data.items)) {

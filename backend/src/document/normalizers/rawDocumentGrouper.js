@@ -3,7 +3,7 @@
 // changing InvoiceNormalizer.
 function groupRawDocument(parsedRows) {
   if (!Array.isArray(parsedRows)) return [];
-  return parsedRows.filter((row) => row && typeof row === 'object');
+  return parsedRows.filter((row) => row && typeof row === "object");
 }
 
 module.exports = { groupRawDocument };

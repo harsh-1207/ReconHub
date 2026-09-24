@@ -1,17 +1,20 @@
-import { useLocation } from 'react-router-dom';
+import { useLocation } from "react-router-dom";
 
 const titles = {
-  '/': 'Dashboard',
-  '/documents': 'Documents',
-  '/reconcile': 'New Reconciliation',
-  '/reports': 'Reports',
+  "/": "Dashboard",
+  "/documents": "Documents",
+  "/reconcile": "New Reconciliation",
+  "/reports": "Reports",
 };
 
 export default function Topbar() {
   const location = useLocation();
-  const title = titles[location.pathname]
-    || (location.pathname.startsWith('/documents/') ? 'Document Details' : null)
-    || (location.pathname.startsWith('/reconciliations/') ? 'Reconciliation Details' : 'Invoice Reconciliation');
+  const title =
+    titles[location.pathname] ||
+    (location.pathname.startsWith("/documents/") ? "Document Details" : null) ||
+    (location.pathname.startsWith("/reconciliations/")
+      ? "Reconciliation Details"
+      : "Invoice Reconciliation");
 
   return (
     <header className="topbar">
