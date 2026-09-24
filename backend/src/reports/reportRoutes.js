@@ -1,0 +1,1 @@
+const express=require('express'); const c=require('./reportController'); const asyncHandler=require('../utils/asyncHandler'); const r=express.Router(); r.get('/reconciliations/:id/report',asyncHandler(c.report)); module.exports=r;

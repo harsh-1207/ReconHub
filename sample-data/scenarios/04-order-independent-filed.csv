@@ -1,0 +1,4 @@
+Invoice Number,Vendor,Date,Currency,Subtotal,Tax,Total,Item Code,Description,Quantity,Unit Price,Item Tax,Amount
+INV-2004,ACME LTD,2026-09-22,USD,60,6,66,C,Item C,1,30,3,33
+INV-2004,ACME LTD,2026-09-22,USD,60,6,66,A,Item A,1,10,1,11
+INV-2004,ACME LTD,2026-09-22,USD,60,6,66,B,Item B,1,20,2,22

@@ -1,0 +1,3 @@
+Invoice Number,Vendor,Date,Currency,Subtotal,Tax,Total,Item Code,Description,Quantity,Unit Price,Item Tax,Amount
+INV-2003,Contoso Pvt Ltd,2026-09-21,INR,1700,306,2006,A-1,Keyboard,1,1000,180,1180
+INV-2003,Contoso Pvt Ltd,2026-09-21,INR,1700,306,2006,A-3,USB Hub,1,700,126,826

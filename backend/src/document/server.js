@@ -1,0 +1,1 @@
+const app=require('./documentApp'); const {testConnection}=require('../database/connection'); const port=Number(process.env.DOCUMENT_API_PORT||3001); testConnection().then(()=>app.listen(port,()=>console.log(`Document API listening on ${port}`))).catch(e=>{console.error('Database connection failed',e);process.exit(1)});

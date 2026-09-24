@@ -1,0 +1,2 @@
+Invoice Number,Vendor,Date,Currency,Subtotal,Tax,Total,Item Code,Description,Quantity,Unit Price,Item Tax,Amount
+INV-1001,Acme Ltd,2026-09-20,USD,200,20,220,A1,Widget A,2,100,10,210

@@ -1,0 +1,3 @@
+const aliases=require('./fieldAliases'); const {findCanonical}=require('./fieldNameNormalizer'); const {normalizeString}=require('./valueNormalizers'); const {normalizeNumber}=require('./numberNormalizer'); const {normalizeDate}=require('./dateNormalizer');
+function normalizeHeader(row){const out={invoiceNumber:null,vendor:null,date:null,currency:null,subtotal:null,tax:null,total:null}; for(const [k,v] of Object.entries(row||{})){const c=findCanonical(k,aliases); if(!c||!(c in out))continue; out[c]=['subtotal','tax','total'].includes(c)?normalizeNumber(v):c==='date'?normalizeDate(v):normalizeString(v)} return out}
+module.exports={normalizeHeader};

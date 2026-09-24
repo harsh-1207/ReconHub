@@ -1,0 +1,1 @@
+const app=require('./reconciliationApp'); const {testConnection}=require('../database/connection'); const port=Number(process.env.RECONCILIATION_API_PORT||3002); testConnection().then(()=>app.listen(port,()=>console.log(`Reconciliation API listening on ${port}`))).catch(e=>{console.error('Database connection failed',e);process.exit(1)});

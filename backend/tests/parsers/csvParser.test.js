@@ -1,0 +1,1 @@
+const CsvParser=require('../../src/document/parsers/CsvParser'); test('parses csv',()=>{const rows=new CsvParser().parse(Buffer.from('Invoice Number,Vendor,Total\nINV-1,Acme,100'));expect(rows[0]['Invoice Number']).toBe('INV-1');expect(rows[0].Total).toBe('100')});

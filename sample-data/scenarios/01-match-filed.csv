@@ -1,0 +1,3 @@
+Invoice Number,Vendor,Date,Currency,Subtotal,Tax,Total,Item Code,Description,Quantity,Unit Price,Item Tax,Amount
+INV-2001,Northwind Ltd,2026-09-20,USD,300,30,330,PEN-1,Premium Pen,2,50,10,110
+INV-2001,Northwind Ltd,2026-09-20,USD,300,30,330,NOTE-1,Notebook,4,50,20,220

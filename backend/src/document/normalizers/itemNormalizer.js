@@ -1,0 +1,3 @@
+const aliases=require('./fieldAliases'); const {findCanonical}=require('./fieldNameNormalizer'); const {normalizeString}=require('./valueNormalizers'); const {normalizeNumber}=require('./numberNormalizer');
+function normalizeItem(row,position=0){const x={itemCode:null,description:null,quantity:null,unitPrice:null,tax:null,amount:null,position}; for(const [k,v] of Object.entries(row||{})){const c=findCanonical(k,aliases); if(!c)continue; if(c==='itemCode'||c==='description')x[c]=normalizeString(v); else if(c==='itemTax'||c==='tax')x.tax=normalizeNumber(v); else if(['quantity','unitPrice','amount'].includes(c))x[c]=normalizeNumber(v)} return x}
+module.exports={normalizeItem};

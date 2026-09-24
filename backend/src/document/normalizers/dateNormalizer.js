@@ -1,0 +1,2 @@
+function normalizeDate(v){if(v===null||v===undefined||v==='')return null; if(v instanceof Date&&!isNaN(v))return v.toISOString().slice(0,10); const s=String(v).trim(); let d=new Date(s); if(!isNaN(d)) return d.toISOString().slice(0,10); const m=s.match(/^(\d{1,2})[\/-](\d{1,2})[\/-](\d{4})$/); if(m)return `${m[3]}-${m[2].padStart(2,'0')}-${m[1].padStart(2,'0')}`; return s.toLowerCase()}
+module.exports={normalizeDate};
